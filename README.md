@@ -4,6 +4,9 @@
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
+<p align="center">
+  <img alt="Projeto DevLinks" src="https://github.com/jorgelcff/Sockets/blob/main/Assets/Capa-1.jpg" width="100%">
+</p>
 
 Este repositório contém dois projetos que foram integrados para a disciplina IF975: Redes de Computadores do curso de Sistema de Informação da UFPE. O primeiro projeto é um sistema de segurança P2P que utiliza a arquitetura peer-to-peer para garantir a confidencialidade e integridade das informações compartilhadas entre os pares. O segundo projeto é um servidor web que implementa o protocolo padronizado HTTP/1.1 usando o protocolo de transporte TCP.
 
