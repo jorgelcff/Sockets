@@ -1,6 +1,12 @@
 <h1 align="center"> Projeto: Programação Utilizando Sockets </h1>
 
 <p align="center">
+  <a href="https://docs.google.com/document/d/1rvcLT5Pl_obZ-WexOLlq5vY75Xp_QZG-z7CQsbee1M4/edit?usp=sharing">Documentação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://docs.google.com/document/d/1pAnHM2-Ow10R58nudsLeQngBw9hN6VKfjI7xGicTEzo/edit?usp=sharing">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href=https://github.com/jorgelcff/Sockets/blob/main/LICENSE>Licença</a>
+</p>
+
+<p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
@@ -8,6 +14,7 @@
   <img alt="Projeto DevLinks" src="https://github.com/jorgelcff/Sockets/blob/main/Assets/Capa-1.jpg" width="100%">
 </p>
 
+## 📜 Resumo
 Este repositório contém dois projetos que foram integrados para a disciplina IF975: Redes de Computadores do curso de Sistema de Informação da UFPE. O primeiro projeto é um sistema de segurança P2P que utiliza a arquitetura peer-to-peer para garantir a confidencialidade e integridade das informações compartilhadas entre os pares. O segundo projeto é um servidor web que implementa o protocolo padronizado HTTP/1.1 usando o protocolo de transporte TCP.
 
 ## 🔒 Segurança P2P
