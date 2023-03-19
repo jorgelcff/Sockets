@@ -375,7 +375,12 @@
     margin-bottom: 0.75rem;
   }
   
-  
+  /*====  PORTAL ============================ */
+    
+  #portal .button{
+    margin-top: 2em;
+  }
+
   /*====  FOOTER ============================ */
   footer {
     background: var(--base-color);
