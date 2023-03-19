@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <!-- PAGE INFO -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CInetwork</title>
+
+    <!-- Icones -->
+    <link rel="stylesheet" href="assets/fonts/style.css" />
+
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav class="container">
+        <a class="logo" href="#">CIn<span>etwork</span>.</a>
+        <!-- menu -->
+        <div class="menu">
+          <ul class="grid">
+            <li><a class="title" href="#home">Início</a></li>
+            <li><a class="title" href="#about">Sobre</a></li>
+            <li><a class="title" href="#services">Serviços</a></li>
+            <li><a class="title" href="">Portal</a></li>
+          </ul>
+        </div>
+        <!-- /menu -->
+        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-close"></div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section class="section" id="home">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://portal.cin.ufpe.br/wp-content/uploads/2021/09/site-2-1.png"
+              alt="Foto do CIn"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Bem-vindo ao servidor do CIn.</h2>
+            <p>
+                Que tal descobrir tudo o que o Centro de Informática da UFPE tem a oferecer? 
+            </p>
+            <a class="button" href="#about">Começar agora</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://www.diariodepernambuco.com.br/static/app/noticia_127983242361/2018/04/16/748793/20180416143518131764a.jpg"
+              alt="Aula no CIn"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Sobre o projeto</h2>
+            <p>
+                Este site foi criado como parte do projeto da disciplina IF975: Redes de Computadores do curso de Sistemas de Informação da UFPE. Nosso projeto consiste em implementar um servidor web que utiliza o protocolo HTTP/1.1 padronizado para transferência de dados na World Wide Web. Além disso, garantimos a confiabilidade da comunicação entre o servidor e o cliente usando o protocolo de transporte TCP.
+            </p>
+            <br />
+            <p>
+                O servidor suporta apenas o método HTTP GET, que é utilizado para recuperar informações de um servidor web. Mas fique tranquilo, nosso servidor é capaz de servir diversos tipos de arquivos para que você possa encontrar o que precisa com facilidade. Estamos felizes em compartilhar nosso projeto com você e esperamos que você possa aproveitar ao máximo o conteúdo disponível em nosso site. Obrigado por visitar nossa página!
+            </p>
+            <br />
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="container grid">
+          <header>
+            <h2 class="title">Serviços</h2>
+            <p class="subtitle">
+                Quais tipos de arquivos o <strong>CInetwork</strong> é capaz de fornecer?
+            </p>
+          </header>
+          <div class="cards grid">
+            <div class="card">
+              <img src="/ServidorHTTP/assets/fonts/image.png" alt="">
+              <h3 class="title">Imagens</h3>
+              <p>
+                Nós fornecemos uma ampla variedade de imagens que ilustram as atividades e a estrutura do Centro de Informática da UFPE
+              </p>
+            </div>
+            <div class="card">
+              <img  src="/ServidorHTTP/assets/fonts/file-text.png" alt="">
+              <h3 class="title">Textos</h3>
+              <p>
+                Nossos arquivos de texto fornecem informações e conteúdo essenciais relacionados ao Centro de Informática da UFPE.
+              </p>
+            </div>
+            <div class="card">
+              <img src="/ServidorHTTP/assets/fonts/youtube.png" alt="">
+              <h3 class="title">Vídeos</h3>
+              <p>
+                Com nossos vídeos, você pode ter uma experiência imersiva ficando por dentro de tudo que acontece no Centro de Informática da UFPE.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+    </main>
+
+    <footer class="section">
+      <div class="container grid">
+        <div class="brand">
+          <a class="logo logo-alt" href="#home">CIn<span>etwork</span>.</a>
+          <p>©2023 CInetwork</p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+
+        <div class="social grid">
+          <a href="https://instagram.com" target="_blank">
+            <i class="icon-instagram"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <i class="icon-facebook"></i
+          ></a>
+          <a href="https://youtube.com" target="_blank"
+            ><i class="icon-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
+
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- main.js -->
+    <script src="main.js"></script>
+  </body>
+</html>
