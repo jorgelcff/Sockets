@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img alt="Projeto DevLinks" src="/Assets/capa-readme.png" width="100%">
+  <img alt="Projeto DevLinks" src="https://github.com/jorgelcff/Sockets/blob/main/Assets/Capa-1.jpg" width="100%">
 </p>
 
 ## 📜 Resumo
