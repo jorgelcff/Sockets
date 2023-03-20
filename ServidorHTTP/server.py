@@ -54,6 +54,8 @@ def handle_request(request):
     # Obter o caminho do arquivo solicitado removendo o primeiro caractere '/'
     file_path = f'files/{path[1:]}'
 
+    print(file_path)
+
     # Verificar se o arquivo existe e é acessível
     if not os.path.isfile(file_path):
         return response_error(404)
