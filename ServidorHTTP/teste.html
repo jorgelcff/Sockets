@@ -1,0 +1,21 @@
+<body>
+  <div>
+    <input type="text" id="req" name="req">
+    <button onclick="sendData()">Requisição</button>
+    <p id="resposta"></p>
+  </div>
+</body>
+
+<script>
+  function sendData(){
+    const req = document.getElementById("req").value
+    const a = 'a.html'
+    fetch('http://localhost:9999/' + a )
+    .then(response => response)
+    .then(data => {
+      document.getElementById('resposta').innerHTML = data.status + data.statusText;
+      console.log(data)
+    })
+    .catch(error => console.error(error));
+  }
+</script>
