@@ -1,7 +1,7 @@
 <h1 align="center"> Projeto: Programação Utilizando Sockets </h1>
 
 <p align="center">
-  <a target="blank" href="https://docs.google.com/document/d/1rvcLT5Pl_obZ-WexOLlq5vY75Xp_QZG-z7CQsbee1M4/edit?usp=sharing" >Documentação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a target="blank" href="https://docs.google.com/document/d/1rvcLT5Pl_obZ-WexOLlq5vY75Xp_QZG-z7CQsbee1M4/edit?usp=sharing">Documentação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a target="blank" href="https://docs.google.com/document/d/1pAnHM2-Ow10R58nudsLeQngBw9hN6VKfjI7xGicTEzo/edit?usp=sharing">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a target="blank" href=https://github.com/jorgelcff/Sockets/blob/main/LICENSE>Licença </a>
 </p>
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img alt="Projeto DevLinks" src="https://github.com/jorgelcff/Sockets/blob/main/Assets/Capa-1.jpg" width="100%">
+  <img alt="Projeto DevLinks" src="/Assets/capa-readme.png" width="100%">
 </p>
 
 ## 📜 Resumo
@@ -34,6 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## ✍️ Autores
 
 - Allyson Ryan
+- Felipe Gusmão
 - Jorge Luiz
 - Lucas Gabriel
 - Otávio Augusto
