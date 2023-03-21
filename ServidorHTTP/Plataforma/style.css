@@ -1,3 +1,4 @@
+/*====  RESET ============================ */
 * {
     padding: 0;
     margin: 0;
@@ -18,18 +19,73 @@ a {
     text-decoration: none;
   }
 
+
+/*==== CONTAINER GERAL ============================ */
 .container {
     width: 80%;
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    
 }
 
+
+/*==== Área das requisições ============================ */
+.left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    background-color: #fff;
+}
+
+.form {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    background-color: #fff;
+    padding-left: 4rem;
+    padding-top: 2rem;
+}
+
+/*==== Botão de voltar ============================ */
+.back-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.back-button button {
+    border: none;
+    background-color: #BF0F0F;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.back-button button:hover {
+    background-color: #590202;
+}
+
+.back-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+/*==== LOGO ============================ */
 .logo {
     font: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 2rem;
     color: #590202;
+    margin-bottom: 1rem;
   }
   
   .logo span {
@@ -40,79 +96,13 @@ a {
     color: hsl(0 0% 98%);
   }
 
-.respostas {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fde3a7d7;
-    padding: 1rem;
-}
-
-
-
-.form {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    background-color: #fff;
-    padding: 2rem;
-}
-
-.form-header {
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.login-button {
-    display: flex;
-    align-items: center;
-}
-
-.login-button button {
-    border: none;
-    background-color: #BF0F0F;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-button button:hover {
-    background-color: #590202;
-}
-
-.login-button button a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #fff;
-}
-
-.form-header h1::after {
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: #BF0F0F;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
-
-.input-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem 0;
-}
-
+/*==== Área de input ============================ */
 .input-box {
     display: flex;
     flex-direction: column;
     width: 70%;
-    margin-bottom: 1.1rem;
+    margin-top: 1rem;
+
 }
 
 .input-box input {
@@ -143,9 +133,10 @@ a {
     color: #000000be;
 }
 
+/*==== Botão de realizar requisição ============================ */
 .continue-button button {
-    width: 100%;
-    margin-top: 2.5rem;
+    width: 70%;
+    margin-top: 1.5rem;
     border: none;
     background-color: #BF0F0F;
     padding: 0.62rem;
@@ -163,6 +154,36 @@ a {
     font-weight: 500;
     color: #fff;
 }
+
+
+/*==== Logo do CIn ============================ */
+.cin-logo {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    background-color: #fff;
+    margin-top: 5rem;
+}
+
+.cin {
+    height: 8rem;
+    width: 8rem;
+}
+
+
+/*==== Área das Respotas ============================ */
+.right {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F23D3D;
+    padding: 1rem;
+}
+
 
 @media screen and (max-width: 1330px) {
     .form-image {
