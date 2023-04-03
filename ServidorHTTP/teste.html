@@ -10,12 +10,14 @@
   function sendData(){
     const req = document.getElementById("req").value
     const a = 'a.html'
-    fetch('http://localhost:9999/' + a )
-    .then(response => response)
-    .then(data => {
-      document.getElementById('resposta').innerHTML = data.status + data.statusText;
-      console.log(data)
+    fetch('http://localhost:9999/' + req )
+    .then(response => {
+      console.log(response);
+      document.getElementById('resposta').innerHTML = response.status + response.statusText;
+    }).then(data => {
+      console.log(data);
     })
     .catch(error => console.error(error));
-  }
+    }
+
 </script>
