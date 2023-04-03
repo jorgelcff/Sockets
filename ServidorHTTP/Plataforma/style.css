@@ -184,6 +184,50 @@ a {
     padding: 1rem;
 }
 
+.box-response {
+    width: 50%;
+    height: 30%;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.cod-response {
+    color: #BF0F0F;
+    font: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.response {
+    font: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-response {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.meu-botao {
+    color: #BF0F0F;
+    background-color: transparent;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    display: none; /* oculta o botão por padrão */
+  }
+
+  /* define o estilo do botão quando ele estiver visível */
+.visivel {
+    display: block; /* exibe o botão como um bloco */
+  }
 
 @media screen and (max-width: 1330px) {
     .form-image {
