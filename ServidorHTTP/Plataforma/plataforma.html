@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ServidorHTTP/Plataforma/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet">
+
+    <title>CInetwork</title>
+</head>
+
+<body>
+     <!-- Container geral -->
+    <div class="container">
+       <div class="left">
+            <!-- Lado que o usuário faz requisições -->
+            <div class="form">
+
+                <div class="back-button">
+                    <button><a href="/ServidorHTTP/index.html"> Voltar</a></button>
+                </div>
+                
+                
+                <a class="logo" href="#">CIn<span>etwork</span>.</a>
+
+                <form action="#">
+                    <div class="input-box">
+                        <label for="req">Digite o arquivo que deseja</label>
+                        <input id="req" type="text" name="req" placeholder="Ex: blocoe.png" required>
+                    </div>
+                </form>
+
+                <script>
+                    function sendData(){
+                      const req = document.getElementById("req").value
+                      var botao = document.querySelector('.meu-botao');
+                      botao.classList.remove('visivel');
+                      fetch('http://localhost:9999/' + req )
+                      .then(response => {
+                        console.log(response);
+                        document.getElementById('status').innerHTML = response.status 
+                        document.getElementById('statusText').innerHTML = response.statusText;
+                        const link = response.url;
+                        const status = response.status;
+                        if (status == 200){
+                            document.getElementById('statusTexts').innerHTML = 'O arquivo solicitado existe no servidor!'
+                            mostrarBotao(link);
+                        } else if (status == 404){
+                            document.getElementById('statusTexts').innerHTML = 'O arquivo solicitado não  existe no servidor!'
+                        } else if (status == 400){
+                            document.getElementById('statusTexts').innerHTML = 'A solicitação não foi feita!'
+                        } else if (status == 403){
+                            document.getElementById('statusTexts').innerHTML = 'Você não possi direito de acesso ao arquivo!'
+                        } else if (status == 505){
+                            document.getElementById('statusTexts').innerHTML = 'A versão HTTP ultilizada não é suportada neste servidor!'
+                        } 
+                      })
+                      .catch(error => console.error(error));
+
+                      
+                    }
+                  </script>
+
+                <div class="continue-button">
+                        <button onclick="sendData()"><a href="#">Realizar Requisição</a> </button>
+                </div>
+                 
+
+            </div>
+
+            <div class="cin-logo">
+                <img class="cin" src="/ServidorHTTP/assets/fonts/images/logocin.png" alt="">
+            </div>
+            
+        </div>
+
+
+        <!-- Lado das respostas -->
+        <div class="right">
+            
+            <div class="box-response">
+                <p class='cod-response' id="status"></p>
+                <p class='response' id="statusText"><= Realize sua Requisição =></p>
+                <p class='text-response' id="statusTexts"></p>
+                <button class="meu-botao" id="meu-botao">Clique aqui para acessar ao conteúdo</button>
+                <script>
+                    function mostrarBotao(url) {
+                      var link = url;
+                      var botao = document.querySelector('.meu-botao');
+                      botao.classList.add('visivel');
+                      botao.addEventListener('click', function() {
+                        console.log(link)
+                        window.open(link, '_blank');
+                        link = ''
+                      });
+                    }
+                </script> 
+            </div>
+        </div>
+
+    </div>
+
+</html>

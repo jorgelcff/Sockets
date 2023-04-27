@@ -48,12 +48,13 @@ def response_error(status_code):
 def handle_request(request):
     """Lida com uma requisição HTTP recebida e retorna uma mensagem de resposta."""
     method, path, version = request.split('\r\n')[0].split(' ')
+    
     if method != 'GET':
         return response_error(400)
 
     # Obter o caminho do arquivo solicitado removendo o primeiro caractere '/'
-    file_path = f'files/{path[1:]}'
 
+    file_path = f'files/{path[1:]}'
     # Verificar se o arquivo existe e é acessível
     if not os.path.isfile(file_path):
         return response_error(404)
@@ -79,6 +80,36 @@ def handle_request(request):
     # Retornar a resposta com o conteúdo do arquivo
     return response_ok(body, mimetype)
 
+
+def get_file(filename):  
+    file_path = f'files/{filename}'
+    try:
+        with open(file_path, 'rb') as f:
+            print(file_path, ' encontrado')
+            return f.read()
+    except FileNotFoundError:
+        print(file_path, ' não encontrado')
+        return None
+
+def handle_request_img(request):
+    req = request.split(' ')
+    method, path = req[0], req[1]
+    if method != 'GET':
+        return 'HTTP/1.1 405 Method Not Allowed\r\n\r\n'
+    filename = path[1:]
+    if filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.svg'):
+        file_content = get_file(filename)
+        if file_content is not None:
+            response_headers = f'HTTP/1.1 200 OK\r\nContent-Type: {filename}\r\n\r\n'
+            response = response_headers.encode() + file_content
+        else:
+            response = response_error(404).encode()
+    else:
+        response = response_error(400).encode()
+    return response
+
+
+
 def run_server(port):
     """Executa um servidor HTTP simples que escuta em um determinado número de porta."""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -96,11 +127,24 @@ def run_server(port):
             print(f'Conexão de [{i}]{addr[0]}:{addr[1]}')
 
             request_data = conn.recv(1024)
-            response = handle_request(request_data.decode("utf-8"))
+            req = request_data.decode("utf-8")
+            
+            try:
+                #consultas vazias
+                type = req.split()[1]    
+                
+                if type.endswith('.html') or type.endswith('.htm') or type.endswith('.css') or type.endswith('.js'):
+                    msg = handle_request(req).encode()
+                elif type.endswith('.png') or type.endswith('.jpg') or type.endswith('.jpeg') or type.endswith('.svg'):
+                    msg = handle_request_img(req)
+                else:
+                    msg = response_error(404).encode()
 
-            msg = response.encode()
-            conn.sendall(msg)
+                conn.sendall(msg)
+                print('mensagem enviada:', msg)
+            except IndexError:
+                pass
 
             conn.close()
 
-run_server(9999)
+run_server(9999) 
