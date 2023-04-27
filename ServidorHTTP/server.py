@@ -54,7 +54,7 @@ def handle_request(request):
 
     # Obter o caminho do arquivo solicitado removendo o primeiro caractere '/'
 
-    file_path = f'ServidorHTTP/files/{path[1:]}'
+    file_path = f'/workspaces/Sockets/ServidorHTTP/files/{path[1:]}'
     # Verificar se o arquivo existe e é acessível
     if not os.path.isfile(file_path):
         return response_error(404)
@@ -81,16 +81,17 @@ def handle_request(request):
     return response_ok(body, mimetype)
 
 
-def get_file(filename):
-    
-    file_path = f'ServidorHTTP/files/{filename}'
+def get_file(filename):  
+    file_path = f'/workspaces/Sockets/ServidorHTTP/files/{filename}'
     try:
         with open(file_path, 'rb') as f:
+            print(file_path, ' encontrado')
             return f.read()
     except FileNotFoundError:
+        print(file_path, ' não encontrado')
         return None
-    
-def handle_requestImg(request):
+
+def handle_request_img(request):
     req = request.split(' ')
     method, path = req[0], req[1]
     if method != 'GET':
@@ -99,7 +100,7 @@ def handle_requestImg(request):
     if filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.svg'):
         file_content = get_file(filename)
         if file_content is not None:
-            response_headers = 'HTTP/1.1 200 OK\r\nContent-Type: {}\r\n\r\n'.format(filename)
+            response_headers = f'HTTP/1.1 200 OK\r\nContent-Type: {filename}\r\n\r\n'
             response = response_headers.encode() + file_content
         else:
             response = response_error(404).encode()
@@ -130,13 +131,14 @@ def run_server(port):
             type = req.split()[1]
             
             if type.endswith('.html') or type.endswith('.htm') or type.endswith('.css') or type.endswith('.js'):
-                msg = handle_request(req).encode()          
+                msg = handle_request(req).encode()
             elif type.endswith('.png') or type.endswith('.jpg') or type.endswith('.jpeg') or type.endswith('.svg'):
-                msg = handle_requestImg(req)
+                msg = handle_request_img(req)
             else:
                 msg = response_error(404).encode()
 
             conn.sendall(msg)
+            print('mensagem enviada:', msg)
 
             conn.close()
 

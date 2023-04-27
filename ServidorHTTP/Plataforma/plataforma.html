@@ -40,10 +40,9 @@
                 <script>
                     function sendData(){
                       const req = document.getElementById("req").value
-                      const a = 'a.html'
                       var botao = document.querySelector('.meu-botao');
                       botao.classList.remove('visivel');
-                      fetch('http://localhost:9999/' + req )
+                      fetch('https://jorgelcff-obscure-guide-7xxxqw6pvxx3g7g-9999.preview.app.github.dev/' + req )
                       .then(response => {
                         console.log(response);
                         document.getElementById('status').innerHTML = response.status 
