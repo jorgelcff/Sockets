@@ -54,7 +54,7 @@ def handle_request(request):
 
     # Obter o caminho do arquivo solicitado removendo o primeiro caractere '/'
 
-    file_path = f'/workspaces/Sockets/ServidorHTTP/files/{path[1:]}'
+    file_path = f'files/{path[1:]}'
     # Verificar se o arquivo existe e é acessível
     if not os.path.isfile(file_path):
         return response_error(404)
@@ -82,7 +82,7 @@ def handle_request(request):
 
 
 def get_file(filename):  
-    file_path = f'/workspaces/Sockets/ServidorHTTP/files/{filename}'
+    file_path = f'files/{filename}'
     try:
         with open(file_path, 'rb') as f:
             print(file_path, ' encontrado')
@@ -128,17 +128,22 @@ def run_server(port):
 
             request_data = conn.recv(1024)
             req = request_data.decode("utf-8")
-            type = req.split()[1]
             
-            if type.endswith('.html') or type.endswith('.htm') or type.endswith('.css') or type.endswith('.js'):
-                msg = handle_request(req).encode()
-            elif type.endswith('.png') or type.endswith('.jpg') or type.endswith('.jpeg') or type.endswith('.svg'):
-                msg = handle_request_img(req)
-            else:
-                msg = response_error(404).encode()
+            try:
+                #consultas vazias
+                type = req.split()[1]    
+                
+                if type.endswith('.html') or type.endswith('.htm') or type.endswith('.css') or type.endswith('.js'):
+                    msg = handle_request(req).encode()
+                elif type.endswith('.png') or type.endswith('.jpg') or type.endswith('.jpeg') or type.endswith('.svg'):
+                    msg = handle_request_img(req)
+                else:
+                    msg = response_error(404).encode()
 
-            conn.sendall(msg)
-            print('mensagem enviada:', msg)
+                conn.sendall(msg)
+                print('mensagem enviada:', msg)
+            except IndexError:
+                pass
 
             conn.close()
 

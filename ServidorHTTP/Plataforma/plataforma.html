@@ -42,7 +42,7 @@
                       const req = document.getElementById("req").value
                       var botao = document.querySelector('.meu-botao');
                       botao.classList.remove('visivel');
-                      fetch('https://jorgelcff-obscure-guide-7xxxqw6pvxx3g7g-9999.preview.app.github.dev/' + req )
+                      fetch('http://localhost:9999/' + req )
                       .then(response => {
                         console.log(response);
                         document.getElementById('status').innerHTML = response.status 
